@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.profile.ProfileFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/app_bar_profile_frag">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:id="@+id/profile_toolbar"
+            android:background="@android:color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/profile_fragment_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:src="@drawable/options"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"/>
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_bar_profile_frag">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/top_bar"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/edit_account_settings"
+                    android:layout_width="34dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="112dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@android:drawable/ic_menu_preferences"
+                    android:textAllCaps="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/profile_image" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="66dp"
+                    android:layout_height="58dp"
+                    android:src="@android:drawable/sym_def_app_icon"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="172dp"
+                    tools:layout_editor_absoluteY="51dp" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Posts"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="352dp"
+                    tools:layout_editor_absoluteY="64dp" />
+
+
+                <TextView
+                    android:id="@+id/total_posts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="336dp"
+                    tools:layout_editor_absoluteY="64dp"
+                    tools:ignore="MissingConstraints" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mid_bar"
+                android:layout_width="250dp"
+                android:layout_height="77dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="7dp">
+
+                <TextView
+                    android:id="@+id/full_name_profile_frag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Full Name"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/bio_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bio"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/full_name_profile_frag"
+                    app:layout_constraintTop_toBottomOf="@+id/full_name_profile_frag" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Followers"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/total_following"
+                    app:layout_constraintTop_toBottomOf="@+id/bio_profile" />
+
+                <TextView
+                    android:id="@+id/total_following"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="3dp"
+                    tools:layout_editor_absoluteY="45dp"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Following"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/total_followers"
+                    app:layout_constraintTop_toBottomOf="@+id/bio_profile" />
+
+                <TextView
+                    android:id="@+id/total_followers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="78dp"
+                    tools:layout_editor_absoluteY="45dp"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/button_black_background"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/image_grid_view_button"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="1dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:src="@android:drawable/ic_menu_compass" />
+
+                <ImageButton
+                    android:id="@+id/image_save_button"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="1dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_dashboard_black_24dp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
