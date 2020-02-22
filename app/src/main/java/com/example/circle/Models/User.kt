@@ -1,4 +1,4 @@
-package com.example.circle.Model
+package com.example.circle.Models
 
 class User {
 
@@ -7,13 +7,15 @@ class User {
     private var bio: String = ""
     private var image: String = ""
     private var uid: String = ""
+    private var email: String = ""
 
-    constructor(username: String, fullname: String, bio: String, image: String, uid: String) {
+    constructor(username: String, fullname: String, bio: String ,image: String, uid: String) {
         this.username = username
         this.fullname = fullname
         this.bio = bio
         this.image = image
         this.uid = uid
+        this.email = email
     }
 
     constructor()
@@ -24,6 +26,14 @@ class User {
 
     fun setUsername(username:String){
         this.username = username
+    }
+
+    fun getemail():String{
+        return email
+    }
+
+    fun setEmail(username:String){
+        this.email = email
     }
 
 

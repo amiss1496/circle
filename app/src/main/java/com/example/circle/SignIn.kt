@@ -1,10 +1,11 @@
 package com.example.circle
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.circle.SignUp
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
@@ -19,7 +20,7 @@ class SignIn : AppCompatActivity() {
 
 
         toSignup.setOnClickListener {
-            var intent = Intent(this@SignIn,SignUp::class.java)
+            var intent = Intent(this@SignIn, SignUp::class.java)
             startActivity(intent)
         }
 
@@ -43,13 +44,13 @@ class SignIn : AppCompatActivity() {
     }
 
     private fun loginUser() {
-        var uEmail = inputEmail_signin.text.toString().trim()
-        var uPass = inputPass.text.toString().trim()
+        var email = inputEmail_signin.text.toString().trim()
+        var password = inputPass.text.toString().trim()
         auth = FirebaseAuth.getInstance()
 
-        if (uEmail.isNotEmpty() && uPass.isNotEmpty()){
+        if (email.isNotEmpty() && password.isNotEmpty()){
             progressBar.visibility = View.VISIBLE
-            auth.signInWithEmailAndPassword(uEmail,uPass).addOnCompleteListener {
+            auth.signInWithEmailAndPassword(email,password).addOnCompleteListener {
                 if(it.isSuccessful){
                     if(auth.currentUser!!.isEmailVerified()){
                         progressBar.visibility = View.INVISIBLE

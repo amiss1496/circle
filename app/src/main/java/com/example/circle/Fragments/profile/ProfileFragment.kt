@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import com.example.circle.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.innocyber.circle.AccountSettingsActivity
+//import com.innocyber.circle.AccountSettingsActivity
 import kotlinx.android.synthetic.main.fragment_profile.view.*
 
 /**
@@ -44,9 +44,6 @@ class ProfileFragment : Fragment() {
             checkFollowAndFollowing()
         }
 
-        view.edit_account_settings.setOnClickListener{
-            startActivity(Intent(context, AccountSettingsActivity::class.java))
-        }
 
         return view
     }

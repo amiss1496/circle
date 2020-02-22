@@ -1,4 +1,4 @@
-package com.innocyber.instachat.Adapter
+package com.example.circle.Adapter
 
 //import com.example.circle.Models.User
 //import com.squareup.picasso.provider.PicassoProvider
@@ -14,7 +14,7 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.circle.Fragments.profile.ProfileFragment
-import com.example.circle.Model.User
+import com.example.circle.Models.User
 import com.example.circle.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
