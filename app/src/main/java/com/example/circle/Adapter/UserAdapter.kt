@@ -128,6 +128,7 @@ class UserAdapter(
 
     }
 
+
     class ViewHolder(@NonNull itemView: View) : RecyclerView.ViewHolder(itemView) {
         var userNameTextView: TextView = itemView.findViewById(R.id.username_search)
         var userFullnameTextView: TextView = itemView.findViewById(R.id.full_name_search)
