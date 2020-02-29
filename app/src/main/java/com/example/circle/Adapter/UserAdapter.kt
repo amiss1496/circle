@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener
 import de.hdodenhof.circleimageview.CircleImageView
 
 class UserAdapter(
+
     private var mContext: Context,
     private var mUser: List<User>,
     private var isFragment: Boolean = false

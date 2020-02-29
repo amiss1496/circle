@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.circle.Fragments.profile.ProfileFragment
+import com.example.circle.Fragments.search.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -14,10 +15,7 @@ class MainActivity : AppCompatActivity() {
                 moveToFragment(HomeFragment())
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.nav_search ->{
-                moveToFragment(SearchFragment())
-                return@OnNavigationItemSelectedListener true
-            }
+
             R.id.nav_add_post ->{
                 //moveToFragment(())
                 return@OnNavigationItemSelectedListener true
@@ -28,6 +26,10 @@ class MainActivity : AppCompatActivity() {
             }*/
             R.id.nav_profile ->{
                 moveToFragment(ProfileFragment())
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.nav_search ->{
+                moveToFragment(SearchFragment())
                 return@OnNavigationItemSelectedListener true
             }
 
