@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.circle.SignUp
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
@@ -34,14 +33,14 @@ class SignIn : AppCompatActivity() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-        if (FirebaseAuth.getInstance().currentUser != null && FirebaseAuth.getInstance().currentUser!!.isEmailVerified) {
-            val intent = Intent(this@SignIn, MainActivity::class.java)
-            finish()
-            startActivity(intent)
-        }
-    }
+//    override fun onStart() {
+//        super.onStart()
+//        if (FirebaseAuth.getInstance().currentUser != null && FirebaseAuth.getInstance().currentUser!!.isEmailVerified) {
+//            val intent = Intent(this@SignIn, MainActivity::class.java)
+//            finish()
+//            startActivity(intent)
+//        }
+//    }
 
     private fun loginUser() {
         var email = inputEmail_signin.text.toString().trim()

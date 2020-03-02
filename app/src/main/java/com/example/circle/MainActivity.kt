@@ -1,5 +1,6 @@
 package com.example.circle
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -25,8 +26,11 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }*/
             R.id.nav_profile ->{
-                moveToFragment(ProfileFragment())
+                val intent = Intent(this,Profile::class.java)
+                startActivity(intent)
                 return@OnNavigationItemSelectedListener true
+//                moveToFragment(ProfileFragment())
+//                return@OnNavigationItemSelectedListener true
             }
             R.id.nav_search ->{
                 moveToFragment(SearchFragment())
