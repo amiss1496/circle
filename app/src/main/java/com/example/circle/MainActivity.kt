@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment
 import com.example.circle.Fragments.profile.ProfileFragment
 import com.example.circle.Fragments.search.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when(item.itemId){
@@ -48,7 +50,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.dd)
-
+        button1.setOnClickListener {
+            var intent = Intent(this, Profile::class.java)
+            startActivity(intent)
+        }
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
         moveToFragment(ProfileFragment())
